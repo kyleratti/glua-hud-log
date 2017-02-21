@@ -20,17 +20,13 @@ end)
 
 local tblQueue = {}
 
-local function removeOldest()
-    table.remove(tblQueue, 1)
-end
-
 local function removeFromQueue(iIndex)
     table.remove(tblQueue, iIndex)
 end
 
 local function addToQueue(tblDrawable)
     if(#tblQueue >= MESSAGES_MAX) then
-        removeOldest()
+        table.remove(tblQueue, 1)
     end
 
     tblQueue[#tblQueue+1] = {
