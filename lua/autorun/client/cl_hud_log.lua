@@ -29,9 +29,7 @@ local function removeFromQueue(iIndex)
 end
 
 local function addToQueue(tblDrawable)
-    local iTotalQueued = #tblQueue
-
-    if(iTotalQueued >= MESSAGES_MAX) then
+    if(#tblQueue >= MESSAGES_MAX) then
         removeOldest()
     end
 
