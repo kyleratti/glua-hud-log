@@ -4,7 +4,7 @@ local objMaxMessages = CreateClientConVar("hudlog_max_messages", "5", true, fals
 local objMessageTimeout = CreateClientConVar("hudlog_msg_timeout", "3", true, false, "Number of seconds each message has to live")
 
 local MESSAGES_MAX = math.Clamp(objMaxMessages:GetInt(), 0, 8)
-local MESSAGES_TIMEOUT = math.Clamp(objMessageTimeout:GetInt(), 0, 5)
+local MESSAGES_TIMEOUT = math.Clamp(objMessageTimeout:GetInt(), 0, 15)
 
 cvars.AddChangeCallback("hudlog_max_messages", function(strConVar, strOld, strNew)
     local iNew = math.Clamp(tonumber(strNew), 0, 8)
@@ -13,7 +13,7 @@ cvars.AddChangeCallback("hudlog_max_messages", function(strConVar, strOld, strNe
 end)
 
 cvars.AddChangeCallback("hudlog_msg_timeout", function(strConVar, strOld, strNew)
-    local iNew = math.Clamp(tonumber(strNew), 0, 5)
+    local iNew = math.Clamp(tonumber(strNew), 0, 15)
     objMessageTimeout:SetInt(iNew)
     MESSAGES_TIMEOUT = iNew
 end)
