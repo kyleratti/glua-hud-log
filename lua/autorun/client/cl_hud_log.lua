@@ -20,10 +20,6 @@ end)
 
 local tblQueue = {}
 
-local function removeFromQueue(iIndex)
-    table.remove(tblQueue, iIndex)
-end
-
 local function addToQueue(tblDrawable)
     if(#tblQueue >= MESSAGES_MAX) then
         table.remove(tblQueue, 1)
