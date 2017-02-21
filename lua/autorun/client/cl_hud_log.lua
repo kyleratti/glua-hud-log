@@ -69,7 +69,7 @@ hook.Add("HUDPaint", "hudlog.paint", function()
         local iOffset = 0
 
         for k,v in pairs(tblData) do
-            surface.SetTextPos(2+iOffset, (i-1)*iHeight)
+            surface.SetTextPos(2+iOffset, 2+(i-1)*iHeight)
 
             if(IsColor(v)) then
                 surface.SetTextColor(v)
