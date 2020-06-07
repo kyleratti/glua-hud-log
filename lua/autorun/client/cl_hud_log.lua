@@ -77,6 +77,6 @@ hook.Add("HUDPaint", "hudlog.paint", function()
     end
 
     for i=1,#tblToTrash do
-        removeFromQueue(i)
+        table.remove(tblQueue, i)
     end
 end)
